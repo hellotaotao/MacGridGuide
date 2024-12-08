@@ -13,6 +13,9 @@ struct ContentView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(.clear)
             .ignoresSafeArea()
+            .transaction { transaction in
+                transaction.animation = nil
+            }
     }
 }
 

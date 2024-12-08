@@ -6,9 +6,21 @@
 //
 
 import SwiftUI
+import AppKit
 
 @main
 struct GridGuideApp: App {
+    init() {
+        DispatchQueue.main.async {
+            NSApp.windows.forEach { window in
+                window.backgroundColor = .clear
+                window.isOpaque = false
+                window.level = .floating
+                window.ignoresMouseEvents = true
+            }
+        }
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

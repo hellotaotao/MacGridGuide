@@ -15,8 +15,8 @@ struct GridGuide: View {
     private func createCell(x: Int, y: Int) -> some View {
         let isEdge = x == 0 || y == 0 || x == numColumns - 1 || y == numRows - 1
         return Rectangle()
-            .stroke(lineWidth: isEdge ? 1 : 0.3)
-            .foregroundColor(isEdge ? .white.opacity(0.2) : .white.opacity(0.1))
+            .stroke(lineWidth: isEdge ? 1 : 1)
+            .foregroundColor(isEdge ? .white.opacity(0.6) : .white.opacity(0.6))
     }
     
     var body: some View {

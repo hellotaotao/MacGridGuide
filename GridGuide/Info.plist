@@ -4,5 +4,9 @@
 <dict>
     <key>NSWindowSupportsTransparentBackground</key>
     <true/>
+    <key>NSVisualEffectViewState</key>
+    <string>Active</string>
+    <key>NSAppearanceType</key>
+    <string>NSAppearanceNameVibrantDark</string>
 </dict>
 </plist> 
