@@ -14,6 +14,7 @@
 		2B4C14412B7CEAB600776AC0 /* GridGuideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C14402B7CEAB600776AC0 /* GridGuideTests.swift */; };
 		2B4C144B2B7CEAB600776AC0 /* GridGuideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C144A2B7CEAB600776AC0 /* GridGuideUITests.swift */; };
 		2B4C144D2B7CEAB600776AC0 /* GridGuideUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C144C2B7CEAB600776AC0 /* GridGuideUITestsLaunchTests.swift */; };
+		2B4C145A2B7CEC6500776AC0 /* GridGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C14592B7CEC6500776AC0 /* GridGuideView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		2B4C14462B7CEAB600776AC0 /* GridGuideUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GridGuideUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B4C144A2B7CEAB600776AC0 /* GridGuideUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridGuideUITests.swift; sourceTree = "<group>"; };
 		2B4C144C2B7CEAB600776AC0 /* GridGuideUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridGuideUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2B4C14592B7CEC6500776AC0 /* GridGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridGuideView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				2B4C142E2B7CEAB100776AC0 /* GridGuideApp.swift */,
 				2B4C14302B7CEAB100776AC0 /* ContentView.swift */,
+				2B4C14592B7CEC6500776AC0 /* GridGuideView.swift */,
 				2B4C14322B7CEAB500776AC0 /* Assets.xcassets */,
 				2B4C14372B7CEAB500776AC0 /* GridGuide.entitlements */,
 				2B4C14342B7CEAB500776AC0 /* Preview Content */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B4C145A2B7CEC6500776AC0 /* GridGuideView.swift in Sources */,
 				2B4C14312B7CEAB100776AC0 /* ContentView.swift in Sources */,
 				2B4C142F2B7CEAB100776AC0 /* GridGuideApp.swift in Sources */,
 			);
