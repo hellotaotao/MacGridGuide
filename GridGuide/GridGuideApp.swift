@@ -10,6 +10,8 @@ import AppKit
 
 @main
 struct GridGuideApp: App {
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     init() {
         DispatchQueue.main.async {
             NSApp.windows.forEach { window in
@@ -17,6 +19,12 @@ struct GridGuideApp: App {
                 window.isOpaque = false
                 window.level = .floating
                 window.ignoresMouseEvents = true
+                window.setFrame(NSScreen.main?.visibleFrame ?? .zero, display: true)
+                window.standardWindowButton(.closeButton)?.isHidden = true
+                window.standardWindowButton(.miniaturizeButton)?.isHidden = true
+                window.standardWindowButton(.zoomButton)?.isHidden = true
+                window.hasShadow = false
+                window.styleMask = []  // Remove all window decorations
             }
         }
     }
@@ -26,7 +34,30 @@ struct GridGuideApp: App {
             ContentView()
         }
         .windowStyle(.hiddenTitleBar)
-        .defaultSize(width: 1000, height: 800)
-        .defaultPosition(.center)
+    }
+}
+
+class AppDelegate: NSObject, NSApplicationDelegate {
+    private var statusItem: NSStatusItem!
+    
+    func applicationDidFinishLaunching(_ notification: Notification) {
+        DispatchQueue.main.async { [weak self] in
+            self?.setupStatusItem()
+        }
+    }
+    
+    private func setupStatusItem() {
+        statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+        if let button = statusItem.button {
+            button.title = "█"
+            button.font = .systemFont(ofSize: 18)
+        }
+        let menu = NSMenu()
+        menu.addItem(NSMenuItem(title: "Quit", action: #selector(quit), keyEquivalent: "q"))
+        statusItem.menu = menu
+    }
+    
+    @objc func quit() {
+        NSApplication.shared.terminate(nil)
     }
 }
