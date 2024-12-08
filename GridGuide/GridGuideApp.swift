@@ -13,5 +13,8 @@ struct GridGuideApp: App {
         WindowGroup {
             ContentView()
         }
+        .windowStyle(.hiddenTitleBar)
+        .defaultSize(width: 1000, height: 800)
+        .defaultPosition(.center)
     }
 }

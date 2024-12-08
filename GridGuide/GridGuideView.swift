@@ -8,15 +8,15 @@ import Foundation
 import SwiftUI
 
 struct GridGuide: View {
-    let gridSize: CGFloat = 10
-    let numColumns: Int = 10
-    let numRows: Int = 10
+    let gridSize: CGFloat = 50
+    let numColumns: Int = 30
+    let numRows: Int = 30
     
     private func createCell(x: Int, y: Int) -> some View {
         let isEdge = x == 0 || y == 0 || x == numColumns - 1 || y == numRows - 1
         return Rectangle()
-            .stroke(lineWidth: isEdge ? 2 : 1)
-            .foregroundColor(isEdge ? .primary : .secondary)
+            .stroke(lineWidth: isEdge ? 1 : 0.3)
+            .foregroundColor(isEdge ? .white.opacity(0.2) : .white.opacity(0.1))
     }
     
     var body: some View {
@@ -31,5 +31,6 @@ struct GridGuide: View {
                 }
             }
         }
+        .allowsHitTesting(false)
     }
 }

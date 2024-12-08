@@ -11,7 +11,8 @@ struct ContentView: View {
     var body: some View {
         GridGuide()
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color.gray.opacity(0.2))
+            .background(.clear)
+            .ignoresSafeArea()
     }
 }
 
