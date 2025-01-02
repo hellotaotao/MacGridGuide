@@ -49,8 +49,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private func setupStatusItem() {
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         if let button = statusItem.button {
-            button.title = "█"
-            button.font = .systemFont(ofSize: 18)
+            button.image = NSImage(systemSymbolName: "squareshape.split.3x3", accessibilityDescription: nil)
+            button.image?.isTemplate = true
         }
         let menu = NSMenu()
         menu.addItem(NSMenuItem(title: "Quit", action: #selector(quit), keyEquivalent: "q"))
