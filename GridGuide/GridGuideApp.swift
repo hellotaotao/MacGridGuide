@@ -7,6 +7,8 @@
 
 import SwiftUI
 import AppKit
+import NotificationCenter
+import Foundation
 
 @main
 struct GridGuideApp: App {
@@ -31,7 +33,7 @@ struct GridGuideApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            GridGuideView()
         }
         .windowStyle(.hiddenTitleBar)
     }
@@ -39,6 +41,15 @@ struct GridGuideApp: App {
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     private var statusItem: NSStatusItem!
+    @objc dynamic var gridDensity: Double = 50 {
+        didSet {        
+            NotificationCenter.default.post(
+                name: NSNotification.Name("gridDensityChanged"), 
+                object: nil,
+                userInfo: ["value": gridDensity]
+            )
+        }
+    }
     
     func applicationDidFinishLaunching(_ notification: Notification) {
         DispatchQueue.main.async { [weak self] in
@@ -53,11 +64,28 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             button.image?.isTemplate = true
         }
         let menu = NSMenu()
+        
+        // Add slider item
+        let sliderItem = NSMenuItem()
+        let slider = NSSlider(value: gridDensity, 
+                            minValue: 20, 
+                            maxValue: 100, 
+                            target: self, 
+                            action: #selector(sliderChanged(_:)))
+        slider.frame = NSRect(x: 20, y: 0, width: 150, height: 20)
+        sliderItem.view = slider
+        menu.addItem(sliderItem)
+        
+        menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "Quit", action: #selector(quit), keyEquivalent: "q"))
         statusItem.menu = menu
     }
     
     @objc func quit() {
         NSApplication.shared.terminate(nil)
+    }
+    
+    @objc func sliderChanged(_ sender: NSSlider) {
+        gridDensity = sender.doubleValue
     }
 }

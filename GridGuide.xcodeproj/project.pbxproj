@@ -15,6 +15,7 @@
 		2B4C144B2B7CEAB600776AC0 /* GridGuideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C144A2B7CEAB600776AC0 /* GridGuideUITests.swift */; };
 		2B4C144D2B7CEAB600776AC0 /* GridGuideUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C144C2B7CEAB600776AC0 /* GridGuideUITestsLaunchTests.swift */; };
 		2B4C145A2B7CEC6500776AC0 /* GridGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C14592B7CEC6500776AC0 /* GridGuideView.swift */; };
+		2BD8B4072D3BFBEB00D50D34 /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD8B4062D3BFBEB00D50D34 /* NotificationExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		2B4C144A2B7CEAB600776AC0 /* GridGuideUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridGuideUITests.swift; sourceTree = "<group>"; };
 		2B4C144C2B7CEAB600776AC0 /* GridGuideUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridGuideUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2B4C14592B7CEC6500776AC0 /* GridGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridGuideView.swift; sourceTree = "<group>"; };
+		2BD8B4062D3BFBEB00D50D34 /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		2B4C142D2B7CEAB100776AC0 /* GridGuide */ = {
 			isa = PBXGroup;
 			children = (
+				2BD8B4062D3BFBEB00D50D34 /* NotificationExtension.swift */,
 				2B4C142E2B7CEAB100776AC0 /* GridGuideApp.swift */,
 				2B4C14302B7CEAB100776AC0 /* ContentView.swift */,
 				2B4C14592B7CEC6500776AC0 /* GridGuideView.swift */,
@@ -196,7 +199,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1520;
-				LastUpgradeCheck = 1520;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					2B4C142A2B7CEAB100776AC0 = {
 						CreatedOnToolsVersion = 15.2;
@@ -264,6 +267,7 @@
 			files = (
 				2B4C145A2B7CEC6500776AC0 /* GridGuideView.swift in Sources */,
 				2B4C14312B7CEAB100776AC0 /* ContentView.swift in Sources */,
+				2BD8B4072D3BFBEB00D50D34 /* NotificationExtension.swift in Sources */,
 				2B4C142F2B7CEAB100776AC0 /* GridGuideApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,6 +339,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -398,6 +403,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -428,6 +434,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"GridGuide/Preview Content\"";
 				DEVELOPMENT_TEAM = CU3VTR9MRH;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -458,6 +465,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"GridGuide/Preview Content\"";
 				DEVELOPMENT_TEAM = CU3VTR9MRH;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -482,10 +490,10 @@
 		2B4C14542B7CEAB600776AC0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = CU3VTR9MRH;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
@@ -501,10 +509,10 @@
 		2B4C14552B7CEAB600776AC0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = CU3VTR9MRH;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
@@ -520,9 +528,9 @@
 		2B4C14572B7CEAB600776AC0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = CU3VTR9MRH;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
@@ -537,9 +545,9 @@
 		2B4C14582B7CEAB600776AC0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = CU3VTR9MRH;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;

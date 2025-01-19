@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        GridGuide()
+        GridGuideView()
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(.clear)
             .ignoresSafeArea()
