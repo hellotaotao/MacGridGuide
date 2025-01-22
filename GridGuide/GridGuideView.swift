@@ -9,7 +9,7 @@ import SwiftUI
 import AppKit
 
 struct GridGuideView: View {
-    @State private var gridSize: Int = 50
+    @State private var gridSize: Int = 60
     let screenWidth = NSScreen.main?.visibleFrame.width ?? 1440
     let screenHeight = NSScreen.main?.visibleFrame.height ?? 900
 

@@ -42,7 +42,7 @@ struct GridGuideApp: App {
 class AppDelegate: NSObject, NSApplicationDelegate {
     private var statusItem: NSStatusItem!
     private var valueLabel: NSTextField!
-    @objc dynamic var gridSize: Double = 50 {
+    @objc dynamic var gridSize: Double = 60 {
         didSet {        
             NotificationCenter.default.post(
                 name: NSNotification.Name("gridSizeChanged"), 
