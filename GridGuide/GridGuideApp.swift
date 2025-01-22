@@ -53,6 +53,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
+    @objc dynamic var transparency: Double = 1.0 {
+        didSet {
+            NotificationCenter.default.post(
+                name: NSNotification.Name("gridTransparencyChanged"),
+                object: nil,
+                userInfo: ["value": transparency]
+            )
+            transparencyLabel?.stringValue = String(format: "%.2f", transparency)
+        }
+    }
+    
+    private var transparencyLabel: NSTextField!
+    
     func applicationDidFinishLaunching(_ notification: Notification) {
         DispatchQueue.main.async { [weak self] in
             self?.setupStatusItem()
@@ -90,6 +103,29 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menuItem.view = containerView
         menu.addItem(menuItem)
         
+        // 添加透明度滑块
+        let transparencyMenuItem = NSMenuItem()
+        let transparencyContainerView = NSView(frame: NSRect(x: 0, y: 0, width: 200, height: 40))
+        
+        let transparencySlider = NSSlider(value: transparency, 
+                                          minValue: 0.1, 
+                                          maxValue: 1.0, 
+                                          target: self, 
+                                          action: #selector(transparencySliderChanged(_:)))
+        transparencySlider.frame = NSRect(x: 20, y: 10, width: 130, height: 20)
+        
+        transparencyLabel = NSTextField(frame: NSRect(x: 160, y: 10, width: 30, height: 20))
+        transparencyLabel.isEditable = false
+        transparencyLabel.isBordered = false
+        transparencyLabel.backgroundColor = .clear
+        transparencyLabel.stringValue = String(format: "%.2f", transparency)
+        
+        transparencyContainerView.addSubview(transparencySlider)
+        transparencyContainerView.addSubview(transparencyLabel)
+        
+        transparencyMenuItem.view = transparencyContainerView
+        menu.addItem(transparencyMenuItem)
+        
         menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "Quit", action: #selector(quit), keyEquivalent: "q"))
         statusItem.menu = menu
@@ -101,5 +137,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @objc func sliderChanged(_ sender: NSSlider) {
         gridSize = round(sender.doubleValue)
+    }
+    
+    @objc func transparencySliderChanged(_ sender: NSSlider) {
+        transparency = sender.doubleValue
     }
 }
