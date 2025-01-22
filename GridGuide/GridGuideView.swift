@@ -9,9 +9,17 @@ import SwiftUI
 import AppKit
 
 struct GridGuideView: View {
-    @State private var gridSize: CGFloat = 50
+    @State private var gridSize: Int = 50
+    let screenWidth = NSScreen.main?.visibleFrame.width ?? 1440
+    let screenHeight = NSScreen.main?.visibleFrame.height ?? 900
+
     @State private var numColumns: Int = 30
     @State private var numRows: Int = 30
+
+    init() {
+        _numColumns = State(initialValue: Int(screenWidth) / gridSize)
+        _numRows = State(initialValue: Int(screenHeight) / gridSize)
+    }
 
     var body: some View {
         GeometryReader { proxy in
@@ -27,10 +35,9 @@ struct GridGuideView: View {
         }
         .onReceive(NotificationCenter.default.publisher(for: .gridDensityChanged)) { notification in
             if let value = notification.userInfo?["value"] as? Double {
-                self.gridSize = CGFloat(value)
-                self.numColumns = Int(ceil(NSScreen.main?.visibleFrame.width ?? 1440) / value)
-                self.numRows = Int(ceil(NSScreen.main?.visibleFrame.height ?? 900) / value)
-                print("Updated gridSize: \(gridSize), numColumns: \(numColumns), numRows: \(numRows)")
+                self.gridSize = Int(value)
+                self.numColumns = Int(screenWidth / value)
+                self.numRows = Int(screenHeight / value)
             }
         }
         .allowsHitTesting(false)

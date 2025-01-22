@@ -41,13 +41,15 @@ struct GridGuideApp: App {
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     private var statusItem: NSStatusItem!
-    @objc dynamic var gridDensity: Double = 50 {
+    private var valueLabel: NSTextField!
+    @objc dynamic var gridSize: Double = 50 {
         didSet {        
             NotificationCenter.default.post(
                 name: NSNotification.Name("gridDensityChanged"), 
                 object: nil,
-                userInfo: ["value": gridDensity]
+                userInfo: ["value": gridSize]
             )
+            valueLabel?.stringValue = "\(Int(gridSize))"
         }
     }
     
@@ -65,16 +67,28 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         let menu = NSMenu()
         
-        // Add slider item
-        let sliderItem = NSMenuItem()
-        let slider = NSSlider(value: gridDensity, 
-                            minValue: 20, 
+        // Add slider item with label
+        let menuItem = NSMenuItem()
+        let containerView = NSView(frame: NSRect(x: 0, y: 0, width: 200, height: 40))
+        
+        let slider = NSSlider(value: gridSize, 
+                            minValue: 40, 
                             maxValue: 100, 
                             target: self, 
                             action: #selector(sliderChanged(_:)))
-        slider.frame = NSRect(x: 20, y: 0, width: 150, height: 20)
-        sliderItem.view = slider
-        menu.addItem(sliderItem)
+        slider.frame = NSRect(x: 20, y: 10, width: 130, height: 20)
+        
+        valueLabel = NSTextField(frame: NSRect(x: 160, y: 10, width: 30, height: 20))
+        valueLabel.isEditable = false
+        valueLabel.isBordered = false
+        valueLabel.backgroundColor = .clear
+        valueLabel.stringValue = "\(Int(gridSize))"
+        
+        containerView.addSubview(slider)
+        containerView.addSubview(valueLabel)
+        
+        menuItem.view = containerView
+        menu.addItem(menuItem)
         
         menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "Quit", action: #selector(quit), keyEquivalent: "q"))
@@ -86,6 +100,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @objc func sliderChanged(_ sender: NSSlider) {
-        gridDensity = sender.doubleValue
+        gridSize = round(sender.doubleValue)
     }
 }
