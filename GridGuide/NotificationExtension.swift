@@ -1,5 +1,5 @@
 import Foundation
 
 extension Notification.Name {
-    static let gridDensityChanged = Notification.Name("gridDensityChanged")
+    static let gridSizeChanged = Notification.Name("gridSizeChanged")
 }

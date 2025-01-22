@@ -33,7 +33,7 @@ struct GridGuideView: View {
                 }
             }
         }
-        .onReceive(NotificationCenter.default.publisher(for: .gridDensityChanged)) { notification in
+        .onReceive(NotificationCenter.default.publisher(for: .gridSizeChanged)) { notification in
             if let value = notification.userInfo?["value"] as? Double {
                 self.gridSize = Int(value)
                 self.numColumns = Int(screenWidth / value)

@@ -45,7 +45,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @objc dynamic var gridSize: Double = 50 {
         didSet {        
             NotificationCenter.default.post(
-                name: NSNotification.Name("gridDensityChanged"), 
+                name: NSNotification.Name("gridSizeChanged"), 
                 object: nil,
                 userInfo: ["value": gridSize]
             )
