@@ -53,7 +53,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
-    @objc dynamic var transparency: Double = 1.0 {
+    @objc dynamic var transparency: Double = 0.5 {
         didSet {
             NotificationCenter.default.post(
                 name: NSNotification.Name("gridTransparencyChanged"),
