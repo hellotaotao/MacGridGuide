@@ -64,11 +64,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
+    @objc dynamic var isGridVisible: Bool = true {
+        didSet {
+            NotificationCenter.default.post(
+                name: NSNotification.Name("gridVisibilityChanged"),
+                object: nil,
+                userInfo: ["isVisible": isGridVisible]
+            )
+        }
+    }
+    
     private var transparencyLabel: NSTextField!
     
     func applicationDidFinishLaunching(_ notification: Notification) {
         DispatchQueue.main.async { [weak self] in
             self?.setupStatusItem()
+            self?.registerGlobalShortcut()
         }
     }
     
@@ -103,7 +114,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menuItem.view = containerView
         menu.addItem(menuItem)
         
-        // 添加透明度滑块
+        // Add transparency slider
         let transparencyMenuItem = NSMenuItem()
         let transparencyContainerView = NSView(frame: NSRect(x: 0, y: 0, width: 200, height: 40))
         
@@ -129,6 +140,41 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "Quit", action: #selector(quit), keyEquivalent: "q"))
         statusItem.menu = menu
+    }
+    
+    private func registerGlobalShortcut() {
+        let options: NSDictionary = [kAXTrustedCheckOptionPrompt.takeUnretainedValue() as NSString: true]
+        let accessEnabled = AXIsProcessTrustedWithOptions(options)
+        print("Accessibility permission status: \(accessEnabled)")
+        
+        if !accessEnabled {
+            print("Please grant Accessibility permission in System Settings.")
+            NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility")!)
+        }
+        
+        print("Registering global shortcut for Command+G")
+        
+        // Add local monitor
+        NSEvent.addLocalMonitorForEvents(matching: .keyDown) { [weak self] event in
+            if event.modifierFlags.contains(.command) && event.charactersIgnoringModifiers == "g" {
+                print("Command+G detected in local monitor!")
+                self?.toggleGridVisibility()
+                return nil // Consume the event
+            }
+            return event
+        }
+        
+        // Keep global monitor
+        NSEvent.addGlobalMonitorForEvents(matching: .keyDown) { [weak self] event in
+            if event.modifierFlags.contains(.command) && event.charactersIgnoringModifiers == "g" {
+                print("Command+G detected in global monitor!")
+                self?.toggleGridVisibility()
+            }
+        }
+    }
+    
+    private func toggleGridVisibility() {
+        isGridVisible.toggle()
     }
     
     @objc func quit() {

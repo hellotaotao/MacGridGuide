@@ -8,5 +8,9 @@
     <string>Active</string>
     <key>NSAppearanceType</key>
     <string>NSAppearanceNameVibrantDark</string>
+    <key>NSAppleEventsUsageDescription</key>
+    <string>GridGuide needs accessibility access to detect keyboard shortcuts.</string>
+    <key>NSAppleScriptEnabled</key>
+    <true/>
 </dict>
 </plist> 

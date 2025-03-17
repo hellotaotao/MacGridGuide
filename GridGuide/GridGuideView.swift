@@ -16,6 +16,7 @@ struct GridGuideView: View {
     @State private var numColumns: Int = 30
     @State private var numRows: Int = 30
     @State private var transparency: Double = 0.5
+    @State private var isGridVisible: Bool = true
 
     init() {
         _numColumns = State(initialValue: Int(screenWidth) / gridSize)
@@ -46,7 +47,13 @@ struct GridGuideView: View {
             self.transparency = value
             }
         }
+        .onReceive(NotificationCenter.default.publisher(for: .gridVisibilityChanged)) { notification in
+            if let isVisible = notification.userInfo?["isVisible"] as? Bool {
+            self.isGridVisible = isVisible
+            }
+        }
         .opacity(transparency)
+        .opacity(isGridVisible ? 1 : 0)
         .allowsHitTesting(false)
     }
 
