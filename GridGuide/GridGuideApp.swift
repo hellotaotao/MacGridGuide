@@ -45,7 +45,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @objc dynamic var gridSize: Double = 60 {
         didSet {        
             NotificationCenter.default.post(
-                name: NSNotification.Name("gridSizeChanged"), 
+                name: .gridSizeChanged,
                 object: nil,
                 userInfo: ["value": gridSize]
             )
@@ -56,7 +56,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @objc dynamic var transparency: Double = 0.5 {
         didSet {
             NotificationCenter.default.post(
-                name: NSNotification.Name("gridTransparencyChanged"),
+                name: .gridTransparencyChanged,
                 object: nil,
                 userInfo: ["value": transparency]
             )
@@ -67,7 +67,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @objc dynamic var isGridVisible: Bool = true {
         didSet {
             NotificationCenter.default.post(
-                name: NSNotification.Name("gridVisibilityChanged"),
+                name: .gridVisibilityChanged,
                 object: nil,
                 userInfo: ["isVisible": isGridVisible]
             )

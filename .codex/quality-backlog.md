@@ -23,7 +23,7 @@ Priority formula: Impact x Confidence / Effort.
 - Proposed fix: Derive row and column counts from `GeometryProxy.size` on each render and keep the count calculation covered by unit tests.
 - Verification plan: Run `xcodebuild -project GridGuide.xcodeproj -scheme GridGuide -configuration Debug -derivedDataPath /tmp/GridGuideDerivedData -destination platform=macOS test -only-testing:GridGuideTests CODE_SIGNING_ALLOWED=NO`.
 - Verification result: Passed. Full scheme test also ran the unit tests successfully, but the placeholder UI test runner exited before bootstrapping.
-- Commit hash when completed: Pending commit.
+- Commit hash when completed: bfc8faa
 
 ## Q-002
 
@@ -49,11 +49,12 @@ Priority formula: Impact x Confidence / Effort.
 - Confidence: 4
 - Estimated effort: 1
 - Priority score: 12.0
-- Status: TODO
+- Status: DONE
 - Evidence: `NotificationExtension.swift` defines typed names, but `GridGuideApp` posts notifications using raw `NSNotification.Name("...")` strings. A typo would compile and silently disconnect menu controls from the overlay.
 - Proposed fix: Post notifications with `.gridSizeChanged`, `.gridTransparencyChanged`, and `.gridVisibilityChanged`.
 - Verification plan: Run `xcodebuild -project GridGuide.xcodeproj -scheme GridGuide -configuration Debug -derivedDataPath /tmp/GridGuideDerivedData -destination platform=macOS build CODE_SIGNING_ALLOWED=NO`.
-- Commit hash when completed:
+- Verification result: Passed.
+- Commit hash when completed: Pending commit.
 
 ## Q-004
 
