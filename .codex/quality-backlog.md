@@ -34,10 +34,11 @@ Priority formula: Impact x Confidence / Effort.
 - Confidence: 3
 - Estimated effort: 3
 - Priority score: 3.0
-- Status: TODO
+- Status: BLOCKED
 - Evidence: `GridGuideUITests.swift` still contains the default template launch test without assertions. A full scheme test completed the unit tests but the UI test runner exited before bootstrapping, so this target is not yet a useful quality gate.
 - Proposed fix: Either add a stable UI smoke assertion that can run on local and CI macOS hosts, or remove the placeholder UI test target from routine verification.
 - Verification plan: Run `xcodebuild -project GridGuide.xcodeproj -scheme GridGuide -configuration Debug -derivedDataPath /tmp/GridGuideDerivedData -destination platform=macOS test CODE_SIGNING_ALLOWED=NO`.
+- Blocker: The full scheme test launches the placeholder UI test target, but `GridGuideUITests-Runner` exits before bootstrapping on this host. Deciding whether to invest in a stable UI smoke test or remove the placeholder UI target from routine verification requires product and CI policy judgment.
 - Commit hash when completed:
 
 ## Q-003
@@ -86,4 +87,4 @@ Priority formula: Impact x Confidence / Effort.
 - Proposed fix: Add `.DS_Store` to `.gitignore`.
 - Verification plan: Run `git status --short` and confirm no unrelated files are staged.
 - Verification result: Passed with `git check-ignore -v .DS_Store GridGuide/Assets.xcassets/.DS_Store src/.DS_Store` and `git status --short`.
-- Commit hash when completed: Pending commit.
+- Commit hash when completed: b1dec15
