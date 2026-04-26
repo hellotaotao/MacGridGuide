@@ -70,7 +70,7 @@ Priority formula: Impact x Confidence / Effort.
 - Proposed fix: Either install `xcpretty` explicitly or remove the formatter pipe and rely on raw `xcodebuild` output.
 - Verification plan: Inspect workflow syntax and run the local build command it invokes without relying on unpinned tools.
 - Verification result: Passed with `xcodebuild clean build analyze -scheme GridGuide -project GridGuide.xcodeproj -derivedDataPath /tmp/GridGuideCIDerivedData -destination platform=macOS CODE_SIGNING_ALLOWED=NO`.
-- Commit hash when completed: Pending commit.
+- Commit hash when completed: 77c6677
 
 ## Q-005
 
@@ -81,8 +81,9 @@ Priority formula: Impact x Confidence / Effort.
 - Confidence: 4
 - Estimated effort: 1
 - Priority score: 8.0
-- Status: TODO
+- Status: DONE
 - Evidence: `.DS_Store` files exist in the working tree, but `.gitignore` only ignores Xcode user data. Local Finder metadata can accidentally appear as untracked noise on machines without a global ignore.
 - Proposed fix: Add `.DS_Store` to `.gitignore`.
 - Verification plan: Run `git status --short` and confirm no unrelated files are staged.
-- Commit hash when completed:
+- Verification result: Passed with `git check-ignore -v .DS_Store GridGuide/Assets.xcassets/.DS_Store src/.DS_Store` and `git status --short`.
+- Commit hash when completed: Pending commit.
