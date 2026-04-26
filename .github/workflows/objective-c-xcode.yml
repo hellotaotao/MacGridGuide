@@ -36,4 +36,4 @@ jobs:
           fi
           file_to_build=$(echo $file_to_build | awk '{$1=$1;print}')
           echo "Building $file_to_build with scheme $scheme"
-          xcodebuild clean build analyze -scheme "$scheme" -"$filetype_parameter" "$file_to_build" | xcpretty && exit ${PIPESTATUS[0]}
+          xcodebuild clean build analyze -scheme "$scheme" -"$filetype_parameter" "$file_to_build"

@@ -54,7 +54,7 @@ Priority formula: Impact x Confidence / Effort.
 - Proposed fix: Post notifications with `.gridSizeChanged`, `.gridTransparencyChanged`, and `.gridVisibilityChanged`.
 - Verification plan: Run `xcodebuild -project GridGuide.xcodeproj -scheme GridGuide -configuration Debug -derivedDataPath /tmp/GridGuideDerivedData -destination platform=macOS build CODE_SIGNING_ALLOWED=NO`.
 - Verification result: Passed.
-- Commit hash when completed: Pending commit.
+- Commit hash when completed: e1725d1
 
 ## Q-004
 
@@ -65,11 +65,12 @@ Priority formula: Impact x Confidence / Effort.
 - Confidence: 3
 - Estimated effort: 1
 - Priority score: 9.0
-- Status: TODO
+- Status: DONE
 - Evidence: The GitHub Actions workflow pipes `xcodebuild` through `xcpretty`, but the repository does not install or pin `xcpretty`. If the runner image does not include it, CI fails before reporting real build errors.
 - Proposed fix: Either install `xcpretty` explicitly or remove the formatter pipe and rely on raw `xcodebuild` output.
 - Verification plan: Inspect workflow syntax and run the local build command it invokes without relying on unpinned tools.
-- Commit hash when completed:
+- Verification result: Passed with `xcodebuild clean build analyze -scheme GridGuide -project GridGuide.xcodeproj -derivedDataPath /tmp/GridGuideCIDerivedData -destination platform=macOS CODE_SIGNING_ALLOWED=NO`.
+- Commit hash when completed: Pending commit.
 
 ## Q-005
 
