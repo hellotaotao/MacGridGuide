@@ -8,28 +8,31 @@ import Foundation
 import SwiftUI
 import AppKit
 
+struct GridGuideLayout: Equatable {
+    let columns: Int
+    let rows: Int
+
+    init(size: CGSize, gridSize: Int) {
+        let cellSize = max(CGFloat(gridSize), 1)
+        columns = max(Int(ceil(size.width / cellSize)), 1)
+        rows = max(Int(ceil(size.height / cellSize)), 1)
+    }
+}
+
 struct GridGuideView: View {
     @State private var gridSize: Int = 60
-    let screenWidth = NSScreen.main?.visibleFrame.width ?? 1440
-    let screenHeight = NSScreen.main?.visibleFrame.height ?? 900
-
-    @State private var numColumns: Int = 30
-    @State private var numRows: Int = 30
     @State private var transparency: Double = 0.5
     @State private var isGridVisible: Bool = true
 
-    init() {
-        _numColumns = State(initialValue: Int(screenWidth) / gridSize)
-        _numRows = State(initialValue: Int(screenHeight) / gridSize)
-    }
-
     var body: some View {
         GeometryReader { proxy in
+            let layout = GridGuideLayout(size: proxy.size, gridSize: gridSize)
+
             VStack(spacing: 0) {
-                ForEach(0..<numRows, id: \.self) { y in
+                ForEach(0..<layout.rows, id: \.self) { y in
                     HStack(spacing: 0) {
-                        ForEach(0..<numColumns, id: \.self) { x in
-                            createCell(x: x, y: y)
+                        ForEach(0..<layout.columns, id: \.self) { x in
+                            createCell(x: x, y: y, layout: layout)
                         }
                     }
                 }
@@ -38,18 +41,16 @@ struct GridGuideView: View {
         .onReceive(NotificationCenter.default.publisher(for: .gridSizeChanged)) { notification in
             if let value = notification.userInfo?["value"] as? Double {
                 self.gridSize = Int(value)
-                self.numColumns = Int(screenWidth / value)
-                self.numRows = Int(screenHeight / value)
             }
         }
         .onReceive(NotificationCenter.default.publisher(for: .gridTransparencyChanged)) { notification in
             if let value = notification.userInfo?["value"] as? Double {
-            self.transparency = value
+                self.transparency = value
             }
         }
         .onReceive(NotificationCenter.default.publisher(for: .gridVisibilityChanged)) { notification in
             if let isVisible = notification.userInfo?["isVisible"] as? Bool {
-            self.isGridVisible = isVisible
+                self.isGridVisible = isVisible
             }
         }
         .opacity(transparency)
@@ -57,8 +58,8 @@ struct GridGuideView: View {
         .allowsHitTesting(false)
     }
 
-    private func createCell(x: Int, y: Int) -> some View {
-        let isEdge = x == 0 || y == 0 || x == numColumns - 1 || y == numRows - 1
+    private func createCell(x: Int, y: Int, layout: GridGuideLayout) -> some View {
+        let isEdge = x == 0 || y == 0 || x == layout.columns - 1 || y == layout.rows - 1
         return Rectangle()
             .stroke(lineWidth: isEdge ? 1 : 1)
             .foregroundColor(isEdge ? .white.opacity(0.6) : .white.opacity(0.6))
