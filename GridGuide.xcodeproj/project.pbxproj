@@ -8,14 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		2B4C142F2B7CEAB100776AC0 /* GridGuideApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C142E2B7CEAB100776AC0 /* GridGuideApp.swift */; };
-		2B4C14312B7CEAB100776AC0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C14302B7CEAB100776AC0 /* ContentView.swift */; };
+		2B4C14312B7CEAB100776AC0 /* OverlayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C14302B7CEAB100776AC0 /* OverlayController.swift */; };
 		2B4C14332B7CEAB500776AC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B4C14322B7CEAB500776AC0 /* Assets.xcassets */; };
 		2B4C14362B7CEAB500776AC0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B4C14352B7CEAB500776AC0 /* Preview Assets.xcassets */; };
 		2B4C14412B7CEAB600776AC0 /* GridGuideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C14402B7CEAB600776AC0 /* GridGuideTests.swift */; };
 		2B4C144B2B7CEAB600776AC0 /* GridGuideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C144A2B7CEAB600776AC0 /* GridGuideUITests.swift */; };
 		2B4C144D2B7CEAB600776AC0 /* GridGuideUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C144C2B7CEAB600776AC0 /* GridGuideUITestsLaunchTests.swift */; };
 		2B4C145A2B7CEC6500776AC0 /* GridGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C14592B7CEC6500776AC0 /* GridGuideView.swift */; };
-		2BD8B4072D3BFBEB00D50D34 /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD8B4062D3BFBEB00D50D34 /* NotificationExtension.swift */; };
+		2BF1A0022E9A000100D50D34 /* GlobalHotKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1A0012E9A000100D50D34 /* GlobalHotKey.swift */; };
+		2BD8B4072D3BFBEB00D50D34 /* GridSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD8B4062D3BFBEB00D50D34 /* GridSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +39,7 @@
 /* Begin PBXFileReference section */
 		2B4C142B2B7CEAB100776AC0 /* GridGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GridGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B4C142E2B7CEAB100776AC0 /* GridGuideApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridGuideApp.swift; sourceTree = "<group>"; };
-		2B4C14302B7CEAB100776AC0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2B4C14302B7CEAB100776AC0 /* OverlayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayController.swift; sourceTree = "<group>"; };
 		2B4C14322B7CEAB500776AC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B4C14352B7CEAB500776AC0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2B4C14372B7CEAB500776AC0 /* GridGuide.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GridGuide.entitlements; sourceTree = "<group>"; };
@@ -48,7 +49,8 @@
 		2B4C144A2B7CEAB600776AC0 /* GridGuideUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridGuideUITests.swift; sourceTree = "<group>"; };
 		2B4C144C2B7CEAB600776AC0 /* GridGuideUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridGuideUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2B4C14592B7CEC6500776AC0 /* GridGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridGuideView.swift; sourceTree = "<group>"; };
-		2BD8B4062D3BFBEB00D50D34 /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
+		2BF1A0012E9A000100D50D34 /* GlobalHotKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalHotKey.swift; sourceTree = "<group>"; };
+		2BD8B4062D3BFBEB00D50D34 /* GridSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +101,11 @@
 		2B4C142D2B7CEAB100776AC0 /* GridGuide */ = {
 			isa = PBXGroup;
 			children = (
-				2BD8B4062D3BFBEB00D50D34 /* NotificationExtension.swift */,
+				2BD8B4062D3BFBEB00D50D34 /* GridSettings.swift */,
 				2B4C142E2B7CEAB100776AC0 /* GridGuideApp.swift */,
-				2B4C14302B7CEAB100776AC0 /* ContentView.swift */,
+				2B4C14302B7CEAB100776AC0 /* OverlayController.swift */,
 				2B4C14592B7CEC6500776AC0 /* GridGuideView.swift */,
+				2BF1A0012E9A000100D50D34 /* GlobalHotKey.swift */,
 				2B4C14322B7CEAB500776AC0 /* Assets.xcassets */,
 				2B4C14372B7CEAB500776AC0 /* GridGuide.entitlements */,
 				2B4C14342B7CEAB500776AC0 /* Preview Content */,
@@ -266,8 +269,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B4C145A2B7CEC6500776AC0 /* GridGuideView.swift in Sources */,
-				2B4C14312B7CEAB100776AC0 /* ContentView.swift in Sources */,
-				2BD8B4072D3BFBEB00D50D34 /* NotificationExtension.swift in Sources */,
+				2BF1A0022E9A000100D50D34 /* GlobalHotKey.swift in Sources */,
+				2B4C14312B7CEAB100776AC0 /* OverlayController.swift in Sources */,
+				2BD8B4072D3BFBEB00D50D34 /* GridSettings.swift in Sources */,
 				2B4C142F2B7CEAB100776AC0 /* GridGuideApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,6 +445,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Grid Guide";
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -472,6 +477,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Grid Guide";
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
