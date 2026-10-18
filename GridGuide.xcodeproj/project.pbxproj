@@ -17,6 +17,12 @@
 		2B4C145A2B7CEC6500776AC0 /* GridGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C14592B7CEC6500776AC0 /* GridGuideView.swift */; };
 		2BF1A0022E9A000100D50D34 /* GlobalHotKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1A0012E9A000100D50D34 /* GlobalHotKey.swift */; };
 		2BD8B4072D3BFBEB00D50D34 /* GridSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD8B4062D3BFBEB00D50D34 /* GridSettings.swift */; };
+		2BA1000B2F00000100D50D34 /* GridModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA1000A2F00000100D50D34 /* GridModel.swift */; };
+		2BA1000D2F00000100D50D34 /* ShortcutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA1000C2F00000100D50D34 /* ShortcutManager.swift */; };
+		2BA1000F2F00000100D50D34 /* ShortcutRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA1000E2F00000100D50D34 /* ShortcutRecorder.swift */; };
+		2BA100112F00000100D50D34 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA100102F00000100D50D34 /* SettingsView.swift */; };
+		2BA100132F00000100D50D34 /* SettingsWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA100122F00000100D50D34 /* SettingsWindowController.swift */; };
+		2BA100152F00000100D50D34 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 2BA100142F00000100D50D34 /* PrivacyInfo.xcprivacy */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,12 @@
 		2B4C14592B7CEC6500776AC0 /* GridGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridGuideView.swift; sourceTree = "<group>"; };
 		2BF1A0012E9A000100D50D34 /* GlobalHotKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalHotKey.swift; sourceTree = "<group>"; };
 		2BD8B4062D3BFBEB00D50D34 /* GridSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridSettings.swift; sourceTree = "<group>"; };
+		2BA1000A2F00000100D50D34 /* GridModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridModel.swift; sourceTree = "<group>"; };
+		2BA1000C2F00000100D50D34 /* ShortcutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutManager.swift; sourceTree = "<group>"; };
+		2BA1000E2F00000100D50D34 /* ShortcutRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutRecorder.swift; sourceTree = "<group>"; };
+		2BA100102F00000100D50D34 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		2BA100122F00000100D50D34 /* SettingsWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWindowController.swift; sourceTree = "<group>"; };
+		2BA100142F00000100D50D34 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +118,12 @@
 				2B4C14302B7CEAB100776AC0 /* OverlayController.swift */,
 				2B4C14592B7CEC6500776AC0 /* GridGuideView.swift */,
 				2BF1A0012E9A000100D50D34 /* GlobalHotKey.swift */,
+				2BA1000A2F00000100D50D34 /* GridModel.swift */,
+				2BA1000C2F00000100D50D34 /* ShortcutManager.swift */,
+				2BA1000E2F00000100D50D34 /* ShortcutRecorder.swift */,
+				2BA100102F00000100D50D34 /* SettingsView.swift */,
+				2BA100122F00000100D50D34 /* SettingsWindowController.swift */,
+				2BA100142F00000100D50D34 /* PrivacyInfo.xcprivacy */,
 				2B4C14322B7CEAB500776AC0 /* Assets.xcassets */,
 				2B4C14372B7CEAB500776AC0 /* GridGuide.entitlements */,
 				2B4C14342B7CEAB500776AC0 /* Preview Content */,
@@ -244,6 +262,7 @@
 			files = (
 				2B4C14362B7CEAB500776AC0 /* Preview Assets.xcassets in Resources */,
 				2B4C14332B7CEAB500776AC0 /* Assets.xcassets in Resources */,
+				2BA100152F00000100D50D34 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +292,11 @@
 				2B4C14312B7CEAB100776AC0 /* OverlayController.swift in Sources */,
 				2BD8B4072D3BFBEB00D50D34 /* GridSettings.swift in Sources */,
 				2B4C142F2B7CEAB100776AC0 /* GridGuideApp.swift in Sources */,
+				2BA1000B2F00000100D50D34 /* GridModel.swift in Sources */,
+				2BA1000D2F00000100D50D34 /* ShortcutManager.swift in Sources */,
+				2BA1000F2F00000100D50D34 /* ShortcutRecorder.swift in Sources */,
+				2BA100112F00000100D50D34 /* SettingsView.swift in Sources */,
+				2BA100132F00000100D50D34 /* SettingsWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,7 +461,7 @@
 				CODE_SIGN_ENTITLEMENTS = GridGuide/GridGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"GridGuide/Preview Content\"";
 				DEVELOPMENT_TEAM = CU3VTR9MRH;
@@ -447,13 +471,14 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Grid Guide";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024–2026 Tao Wang. All rights reserved.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.4;
-				MARKETING_VERSION = 1.3.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hellotaotao.GridGuide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -469,7 +494,7 @@
 				CODE_SIGN_ENTITLEMENTS = GridGuide/GridGuide.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"GridGuide/Preview Content\"";
 				DEVELOPMENT_TEAM = CU3VTR9MRH;
@@ -479,13 +504,14 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Grid Guide";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024–2026 Tao Wang. All rights reserved.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.4;
-				MARKETING_VERSION = 1.3.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hellotaotao.GridGuide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
