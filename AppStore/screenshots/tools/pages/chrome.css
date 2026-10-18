@@ -1,0 +1,24 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1440px; height: 900px; overflow: hidden; }
+body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif; -webkit-font-smoothing: antialiased; background: #fff; }
+.menubar { position: absolute; top: 0; left: 0; right: 0; height: 24px; display: flex; align-items: center; padding: 0 10px 0 14px; font-size: 13px; color: #111; background: rgba(236,236,240,0.92); backdrop-filter: blur(20px); z-index: 10; }
+.dark .menubar { background: rgba(32,32,36,0.92); color: #f2f2f2; }
+.dark .menubar img { filter: invert(1); }
+.menubar .item { margin-right: 18px; }
+.menubar .app { font-weight: 700; }
+.menubar .apple { height: 15px; margin-right: 20px; position: relative; top: -1px; }
+.menubar .right { margin-left: auto; display: flex; align-items: center; gap: 14px; }
+.menubar .right img { display: block; }
+.menubar .status-active { background: rgba(0,0,0,0.12); border-radius: 5px; padding: 2px 6px; margin: 0 -6px; }
+.dark .menubar .status-active { background: rgba(255,255,255,0.18); }
+.toolbar { position: absolute; top: 24px; left: 0; right: 0; height: 56px; display: flex; align-items: center; padding: 0 16px; background: #f6f6f7; border-bottom: 1px solid #dcdcdf; z-index: 5; }
+.dark .toolbar { background: #2a2a2e; border-bottom-color: #3a3a3f; }
+.lights { display: flex; gap: 8px; margin-right: 24px; }
+.lights span { width: 12px; height: 12px; border-radius: 50%; display: block; }
+.lights span:nth-child(1) { background: #ff5f57; } .lights span:nth-child(2) { background: #febc2e; } .lights span:nth-child(3) { background: #28c840; }
+.nav { display: flex; gap: 18px; color: #8a8a8e; font-size: 18px; margin-right: 24px; }
+.address { flex: 0 0 560px; margin: 0 auto; height: 32px; border-radius: 8px; background: #e7e7ea; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #333; gap: 6px; }
+.dark .address { background: #3a3a3f; color: #ddd; }
+.address .dim { color: #8a8a8e; }
+.tools { display: flex; gap: 18px; color: #8a8a8e; font-size: 16px; }
+.viewport { position: absolute; top: 80px; left: 0; right: 0; bottom: 0; overflow: hidden; }

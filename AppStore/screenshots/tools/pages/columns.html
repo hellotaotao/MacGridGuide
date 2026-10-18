@@ -1,0 +1,82 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="chrome.css"><style>
+.page { color: #14161a; }
+.container { width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 24px; }
+nav.site { height: 76px; align-items: center; border-bottom: 1px solid #eceef1; }
+.logo { grid-column: 1 / 3; font-weight: 700; font-size: 20px; display: flex; align-items: center; gap: 10px; letter-spacing: -0.2px; }
+.logo i { width: 26px; height: 26px; border-radius: 7px; background: linear-gradient(135deg,#10b981,#0e7490); display: block; }
+.links { grid-column: 4 / 10; display: flex; justify-content: center; gap: 36px; font-size: 15px; color: #4a4f57; }
+.navcta { grid-column: 11 / 13; display: flex; justify-content: flex-end; gap: 12px; align-items: center; font-size: 15px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 44px; padding: 0 20px; border-radius: 10px; font-weight: 600; font-size: 15px; }
+.btn.primary { background: #0f172a; color: #fff; }
+.btn.ghost { border: 1px solid #d5d8de; color: #14161a; }
+.hero { padding-top: 72px; }
+.hero-copy { grid-column: 1 / 7; padding-top: 24px; }
+.eyebrow { display: inline-block; font-size: 13px; font-weight: 600; color: #047857; background: #ecfdf5; padding: 6px 12px; border-radius: 99px; margin-bottom: 24px; }
+h1 { font-size: 58px; line-height: 1.04; letter-spacing: -1.6px; font-weight: 750; }
+.lede { font-size: 19px; line-height: 1.55; color: #4a4f57; margin-top: 24px; max-width: 520px; }
+.ctas { margin-top: 36px; display: flex; gap: 12px; }
+.ctas .btn { height: 52px; padding: 0 26px; font-size: 16px; }
+.trust { margin-top: 40px; font-size: 13px; color: #7a808a; display: flex; gap: 20px; }
+.mock { grid-column: 7 / 13; border: 1px solid #e3e6ea; border-radius: 16px; box-shadow: 0 24px 60px -24px rgba(15,23,42,0.25); padding: 28px; background: #fff; }
+.mock h3 { font-size: 15px; display: flex; justify-content: space-between; align-items: center; }
+.ok { font-size: 13px; color: #047857; background: #ecfdf5; padding: 4px 10px; border-radius: 99px; font-weight: 600; }
+.svc { margin-top: 22px; }
+.svc .row { display: flex; justify-content: space-between; font-size: 14px; color: #30343a; margin-bottom: 8px; }
+.svc .row span:last-child { color: #7a808a; }
+.bars { display: flex; gap: 3px; height: 30px; }
+.bars b { flex: 1; background: #34d399; border-radius: 2px; }
+.bars b.w { background: #fbbf24; } .bars b.e { background: #f87171; }
+.features { margin-top: 64px; row-gap: 24px; }
+.card { grid-column: span 4; border: 1px solid #eceef1; border-radius: 14px; padding: 28px; background: #fafbfc; }
+.card .ic { width: 40px; height: 40px; border-radius: 10px; background: #e0f2fe; margin-bottom: 18px; }
+.card:nth-child(2) .ic { background: #ecfdf5; } .card:nth-child(3) .ic { background: #fef3c7; }
+.card h4 { font-size: 18px; margin-bottom: 8px; }
+.card p { font-size: 15px; line-height: 1.55; color: #5a606a; }
+</style></head><body>
+<div class="menubar">
+  <img class="apple" src="sym-apple.png" style="height:18px">
+  <span class="item app">Safari</span><span class="item">File</span><span class="item">Edit</span><span class="item">View</span><span class="item">History</span><span class="item">Bookmarks</span><span class="item">Develop</span><span class="item">Window</span><span class="item">Help</span>
+  <div class="right">
+    <span class="status-active"><img src="sym-grid.png" style="height:17px"></span>
+    <img src="sym-battery.png" style="height:13px">
+    <img src="sym-wifi.png" style="height:14px">
+    <img src="sym-search.png" style="height:15px">
+    <img src="sym-control.png" style="height:14px">
+    <span>Mon Oct 19&nbsp;&nbsp;9:41 AM</span>
+  </div>
+</div>
+<div class="toolbar">
+  <div class="lights"><span></span><span></span><span></span></div>
+  <div class="nav"><span>&#x2039;</span><span>&#x203A;</span></div>
+  <div class="address"><span class="dim">&#x24D8;</span> localhost:5173</div>
+  <div class="tools"><span>&#x2B06;&#xFE0E;</span><span>&#xFF0B;</span><span>&#x29C9;</span></div>
+</div>
+<div class="viewport page">
+  <nav class="site container">
+    <div class="logo"><i></i>Fernway</div>
+    <div class="links"><span>Product</span><span>Integrations</span><span>Pricing</span><span>Docs</span><span>Changelog</span></div>
+    <div class="navcta"><span>Sign in</span><span class="btn primary">Start free</span></div>
+  </nav>
+  <section class="hero container">
+    <div class="hero-copy">
+      <span class="eyebrow">New · Incident timelines</span>
+      <h1>Status pages your customers actually trust.</h1>
+      <p class="lede">Fernway watches every endpoint, posts incidents in plain language and keeps subscribers in the loop, without a single manual update.</p>
+      <div class="ctas"><span class="btn primary">Start monitoring</span><span class="btn ghost">See a live page</span></div>
+      <div class="trust"><span>✓ Free for 3 monitors</span><span>✓ No credit card</span><span>✓ SOC 2 Type II</span></div>
+    </div>
+    <div class="mock">
+      <h3>acme.status <span class="ok">All systems operational</span></h3>
+<div class="svc"><div class="row"><span>API</span><span>99.98% uptime</span></div><div class="bars"><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class="w"></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class="w"></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b></div></div>
+<div class="svc"><div class="row"><span>Dashboard</span><span>100% uptime</span></div><div class="bars"><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class="w"></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class="w"></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b></div></div>
+<div class="svc"><div class="row"><span>Webhooks</span><span>99.91% uptime</span></div><div class="bars"><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class="e"></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class="e"></b><b class=""></b></div></div>
+<div class="svc"><div class="row"><span>Payments</span><span>99.99% uptime</span></div><div class="bars"><b class=""></b><b class=""></b><b class="w"></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class="w"></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class="w"></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b></div></div>
+<div class="svc"><div class="row"><span>Search</span><span>99.95% uptime</span></div><div class="bars"><b class=""></b><b class=""></b><b class=""></b><b class="w"></b><b class="w"></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b><b class=""></b></div></div>
+    </div>
+  </section>
+  <section class="features container">
+    <div class="card"><div class="ic"></div><h4>Checks every 30 seconds</h4><p>HTTP, TCP, DNS and cron heartbeats from 12 regions, with smart retries before anyone gets paged.</p></div>
+    <div class="card"><div class="ic"></div><h4>Incidents in plain language</h4><p>Draft an update once and publish it to your page, email, Slack and RSS subscribers at the same time.</p></div>
+    <div class="card"><div class="ic"></div><h4>Your brand, your domain</h4><p>Custom domains, colors and components, so the page looks like the rest of your product.</p></div>
+  </section>
+</div></body></html>
